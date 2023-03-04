@@ -1,0 +1,1 @@
+package com.mazanov.rick_and_morty_on_view.data.remote_data_source.dtoimport com.google.gson.annotations.SerializedNamedata class ResultDto(    @SerializedName("results") val results: List<PersonModelDto>)

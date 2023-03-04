@@ -1,0 +1,1 @@
+package com.mazanov.rick_and_morty_on_view.domain.repositoryimport com.mazanov.rick_and_morty_on_view.domain.models.PersonModelimport kotlinx.coroutines.flow.Flowinterface Repository {    fun getAllCharacters(page: Int): Flow<List<PersonModel>>}

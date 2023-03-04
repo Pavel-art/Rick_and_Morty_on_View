@@ -1,0 +1,1 @@
+package com.mazanov.rick_and_morty_on_view.data.remote_data_source.retrofitimport com.mazanov.rick_and_morty_on_view.data.remote_data_source.dto.ResultDtoimport retrofit2.http.GETimport retrofit2.http.Queryinterface ApiService {    @GET("api/character")    suspend fun getAllCharactersFromApi(@Query("page") page: Int): ResultDto}
