@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">Rick_and_Morty_on_View</string>
+    <string name="app_name">Character</string>
+    <string name="person_avatar">person_avatar</string>
+    <string name="rick_sanchez">Rick Sanchez</string>
+    <string name="last_known_location_title">Last known locaton:</string>
+    <string name="origin_title">Origin</string>
+    <string name="toolbar_title">Character</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gender_title">Gender:</string>
+    <string name="number_of_episodes_title">Number of episodes:</string>
+    <string name="species_title">Species:</string>
+    <string name="last_known_location">Last known location:</string>
+    <string name="was_created_title">Was created:</string>
 </resources>

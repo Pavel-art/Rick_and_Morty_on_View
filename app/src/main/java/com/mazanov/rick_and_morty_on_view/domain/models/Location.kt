@@ -1,1 +1,1 @@
-package com.mazanov.rick_and_morty_on_view.domain.modelsdata class Location(    val name: String,    val url: String)
+package com.mazanov.rick_and_morty_on_view.domain.modelsimport android.os.Parcelableimport kotlinx.parcelize.Parcelize@Parcelizedata class Location(    val name: String,    val url: String) : Parcelable

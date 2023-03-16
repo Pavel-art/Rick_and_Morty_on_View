@@ -1,0 +1,1 @@
+package com.mazanov.rick_and_morty_on_view.presentation.main_screenimport com.mazanov.rick_and_morty_on_view.domain.models.PersonModelsealed class MainScreenState {    object Initial : MainScreenState()    object Loading : MainScreenState()    data class Load(val content: List<PersonModel>) : MainScreenState()    data class Error(val error: String) : MainScreenState()}

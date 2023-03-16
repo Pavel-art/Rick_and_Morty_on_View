@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -15,6 +16,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary  true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,6 +47,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     //Hilt
     def hilt_version = "2.44"
@@ -55,6 +58,18 @@ dependencies {
     // Interceptor for logs in console
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
 
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
+
+    // Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:3.2.0-alpha04"
+    implementation "androidx.paging:paging-compose:1.0.0-alpha18"
+
+    def lifecycle = "2.3.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycle}"
+    implementation "androidx.fragment:fragment-ktx:1.5.5"
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'

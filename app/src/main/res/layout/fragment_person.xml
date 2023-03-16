@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".presentation.person_screen.PersonFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/myToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:backgroundTint="@color/top_bar_color"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Person"
+                android:textColor="@color/icon_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/myToolbar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageButton
+                android:id="@+id/ib_back"
+                style="@style/Widget.AppCompat.ActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="true"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="@+id/myToolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/myToolbar"
+                app:tint="@color/icon_color" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_avatar"
+        android:layout_width="275dp"
+        android:layout_height="275dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name">
+
+        <ImageView
+            android:id="@+id/main_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/person_avatar"
+            android:src="@drawable/ic_launcher_background"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="110dp" />
+
+        <ImageButton
+            android:id="@+id/add_to_favourite"
+            style="@style/Widget.AppCompat.ActionButton"
+            android:layout_width="40dp"
+            android:layout_height="40sp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_favorite" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/fredoka_one_regular"
+        android:text="@string/rick_sanchez"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/cv_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+    <LinearLayout
+        android:id="@+id/ll_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/ll_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_avatar">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/iv_status"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            app:cardCornerRadius="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Alive"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ll_episode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_status">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gender_title"
+            android:textColor="@color/title_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Male"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ll_species"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_gender">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_episodes_title"
+            android:textColor="@color/title_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_species"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ll_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_episode">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/species_title"
+            android:textColor="@color/title_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_species"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Human"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ll_origin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_species">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/last_known_location"
+            android:textColor="@color/title_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_location_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Citadel of Ricks"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ll_created"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_location">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="@string/origin_title"
+            android:textColor="@color/title_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_origin_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Earth (C-137)"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_created"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_origin">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="@string/was_created_title"
+            android:textColor="@color/title_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_created"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2017-11-04T18:48:46.250Z"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
